@@ -1,3 +1,3 @@
 # SELinux
-BOARD_SEPOLICY_DIRS += \
-    device/google/seed/sepolicy
+# BOARD_SEPOLICY_DIRS += \
+#   device/google/seed/sepolicy
