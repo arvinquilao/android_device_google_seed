@@ -34,11 +34,11 @@
 #include <android-base/properties.h>
 #include "vendor_init.h"
 #include "property_service.h"
-#include "util.h"
 
 #include "init_msm8916.h"
 
 using android::base::GetProperty;
+using android::init::property_set;
 
 char const *heapstartsize;
 char const *heapgrowthlimit;
@@ -88,7 +88,7 @@ void init_target_properties()
     property_set("dalvik.vm.heapminfree", heapminfree);
     property_set("dalvik.vm.heapmaxfree", "8m");
 
-    name = GetProperty("ro.product.name", "");
+    std::string name = GetProperty("ro.product.name", "");
 
     if (name == "ctih220") {
         property_override("ro.product.device", "ctih220_sprout");
